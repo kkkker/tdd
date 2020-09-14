@@ -22,4 +22,15 @@ public class MommifierTest {
         //Then
         assertEquals(stringWithoutContinuousOfVowels, result);
     }
+
+    @Test
+    void should_return_itself_when_number_of_vowels_less_than_thirty_present() {
+        //Given
+        Mommifier mommifier = new Mommifier();
+        String stringWithVowelsLessThanThirtyPresent = "abbbbbbb";
+        //When
+        String result = mommifier.convert(stringWithVowelsLessThanThirtyPresent);
+        //Then
+        assertEquals(stringWithVowelsLessThanThirtyPresent, result);
+    }
 }

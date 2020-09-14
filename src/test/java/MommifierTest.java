@@ -27,10 +27,21 @@ public class MommifierTest {
     void should_return_itself_when_number_of_vowels_less_than_thirty_present() {
         //Given
         Mommifier mommifier = new Mommifier();
-        String stringWithVowelsLessThanThirtyPresent = "abbbbbbb";
+        String stringWithVowelsLessThanThirtyPresent = "aabbbbbbbbbbbbbb";
         //When
         String result = mommifier.convert(stringWithVowelsLessThanThirtyPresent);
         //Then
         assertEquals(stringWithVowelsLessThanThirtyPresent, result);
     }
+
+    @Test void should_insert_mommy_when_number_of_vowels_more_than_thirty_present() {
+        //Given
+        Mommifier mommifier = new Mommifier();
+        String stringWithVowelsMoreThanThirtyPresent = "aabbb";
+        //When
+        String result = mommifier.convert(stringWithVowelsMoreThanThirtyPresent);
+        //Then
+        assertEquals("amommyabbb", result);
+    }
+
 }
